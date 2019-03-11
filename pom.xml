@@ -40,7 +40,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<!-- SonarQube -->
-	<sonar.login>5f6164fd1b1a0f4bf26d7fff6809521ce98847d7</sonar.login>
+	<sonar.login>37fe9e3180dced0f27ccf2d13e9b203fb1e2616d</sonar.login>
     	<sonar.sources>src</sonar.sources>
     	<!-- <sonar.tests>src/test/java/org/mybatis/jpetstore</sonar.tests> -->
     	<!-- <sonar.junit.reportPaths>target/surefire-reports</sonar.junit.reportPaths> -->
