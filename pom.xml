@@ -43,6 +43,7 @@
 	<sonar.login>37fe9e3180dced0f27ccf2d13e9b203fb1e2616d</sonar.login>
 	<sonar.host.url>http://localhost:9000</sonar.host.url>
     	<sonar.sources>src</sonar.sources>
+	<!-- <sonar.jacoco.reportPaths></sonar.jacoco.reportPaths> -->
     	<!-- <sonar.tests>src/test/java/org/mybatis/jpetstore</sonar.tests> -->
     	<!-- <sonar.junit.reportPaths>target/surefire-reports</sonar.junit.reportPaths> -->
     	<sonar.test.exclusions>src/test/java/**</sonar.test.exclusions>
@@ -97,6 +98,21 @@
             <plugin>
               <groupId>org.jacoco</groupId>
               <artifactId>jacoco-maven-plugin</artifactId>
+		    <version>0.8.3</version>
+		    <executions>
+			    <execution>
+				    <goals>
+					    <goal>prepare-agent</goal>
+				    </goals>
+			    </execution>
+			    <execution>
+				    <id>report</id>
+				    <phase>prepare-package</phase>
+				    <goals>
+					    <goal>report</goal>
+				    </goals>
+			    </execution>
+		    </executions>
               <configuration>
                 <skip>true</skip>
               </configuration>
