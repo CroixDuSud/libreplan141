@@ -39,6 +39,12 @@
         <default.exampleUsersDisabled>true</default.exampleUsersDisabled>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<!-- SonarQube -->
+	<sonar.login>5f6164fd1b1a0f4bf26d7fff6809521ce98847d7</sonar.login>
+    	<sonar.sources>src</sonar.sources>
+    	<!-- <sonar.tests>src/test/java/org/mybatis/jpetstore</sonar.tests> -->
+    	<!-- <sonar.junit.reportPaths>target/surefire-reports</sonar.junit.reportPaths> -->
+    	<sonar.test.exclusions>src/test/java/**</sonar.test.exclusions>
     </properties>
 
     <!--
@@ -73,6 +79,31 @@
     <profiles>
 
         <!-- Development profile -->
+	    <profile>
+      <id>itest</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <configuration>
+                <includes>
+                  <include>**/*IT.class</include>
+                </includes>
+              </configuration>
+            </plugin>
+            <plugin>
+              <groupId>org.jacoco</groupId>
+              <artifactId>jacoco-maven-plugin</artifactId>
+              <configuration>
+                <skip>true</skip>
+              </configuration>
+            </plugin> 
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
         <profile>
             <id>dev</id>
             <activation>
